@@ -10,6 +10,7 @@ const Promise = require('bluebird')
 const test = require('../test')
 const paths = require('../paths')
 
+
 gulp.task('lint', (done) => {
   test(lint, 'Linted source.', done)
 })

@@ -5,8 +5,10 @@
 const gulp = require('gulp')
 const Promise = require('bluebird')
 const rimrafAsync = Promise.promisify(require('rimraf'))
+
 const paths = require('../paths')
 const test = require('../test')
+
 
 gulp.task('clean', (done) => test(clean, 'Cleaned dist.', done))
 

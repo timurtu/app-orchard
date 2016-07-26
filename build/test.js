@@ -4,6 +4,7 @@
 
 const log = require('./log')
 
+
 const test = (promise, message, done) => {
 
   promise()

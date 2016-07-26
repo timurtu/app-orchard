@@ -9,6 +9,7 @@ const execAsync = Promise.promisify(require('child_process').exec)
 const test = require('../test')
 const log = require('../log')
 
+
 gulp.task('bundle', done => test(bundle, 'Bundled app.', done))
 
 const bundle = () => execAsync('node_modules/.bin/webpack')
