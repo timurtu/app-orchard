@@ -1,0 +1,41 @@
+{
+  "name": "app-orchard",
+  "version": "1.0.0",
+  "description": "A place where people go to design apps to be built by developers.",
+  "main": "index.js",
+  "scripts": {
+    "start": "lite-server -c bs-config.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/timurtu/apporchard.git"
+  },
+  "keywords": [
+    "app",
+    "creation",
+    "design",
+    "dev"
+  ],
+  "author": "Timur Uzel <timurt.uzel@gmail.com> (https://github.com/timurtu)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/timurtu/apporchard/issues"
+  },
+  "homepage": "https://github.com/timurtu/apporchard#readme",
+  "dependencies": {
+    "semantic-ui": "^2.2.2"
+  },
+  "devDependencies": {
+    "babel-loader": "^6.2.4",
+    "babel-preset-es2015": "^6.9.0",
+    "bluebird": "^3.4.1",
+    "gulp": "^3.9.1",
+    "gulp-util": "^3.0.7",
+    "node-sass": "^3.8.0",
+    "require-dir": "^0.3.0",
+    "rimraf": "^2.5.4",
+    "sass-loader": "^4.0.0",
+    "style-loader": "^0.13.1",
+    "webpack": "^1.13.1"
+  }
+}
