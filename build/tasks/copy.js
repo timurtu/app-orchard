@@ -11,12 +11,9 @@ const log = require('../log')
 const test = require('../test')
 
 
-gulp.task('html', (done) => {
-  
-  test(copyHtml, `Copied to ${paths.dist_root}`, done)
-})
+gulp.task('copy', (done) => test(copy, `Copied files.`, done))
 
-const copyHtml = () => {
+const copy = () => {
   
   return new Promise((resolve, reject) => {
     
@@ -27,6 +24,4 @@ const copyHtml = () => {
   })
 }
 
-module.exports = {
-  copyHtml
-}
+module.exports = copy

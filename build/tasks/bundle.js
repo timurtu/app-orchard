@@ -6,17 +6,12 @@ const gulp = require('gulp')
 const Promise = require('bluebird')
 const execAsync = Promise.promisify(require('child_process').exec)
 
-const paths = require('../paths')
 const test = require('../test')
 const log = require('../log')
 
-
-gulp.task('bundle', (done) => {
-  
-  test(bundle, `Bundled app to ${paths.dist_root}`, done)
-})
+gulp.task('bundle', done => test(bundle, 'Bundled app.', done))
 
 const bundle = () => execAsync('node_modules/.bin/webpack')
-  .then(out => log('yellow', out))
+  .then(out => /ERROR/.test(out) ? log('red', out) : log('green', out))
 
 module.exports = bundle

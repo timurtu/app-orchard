@@ -5,20 +5,13 @@
 const gulp = require('gulp')
 const Promise = require('bluebird')
 
-const log = require('../log')
-const paths = require('../paths')
 const test = require('../test')
 const clean = require('./clean')
 const bundle = require('./bundle')
-const copyHtml = require('./copy').copyHtml
+const copy = require('./copy')
 
 
-gulp.task('build', (done) => {
-  
-  test(build, `Built to ${paths.dist_root}`, done)
-})
+gulp.task('build', (done) => test(build, 'Built app.', done))
 
-const build = () => {
-  
-  return Promise.join(copyHtml(), bundle())
-}
+const build = () => clean()
+  .then(() => Promise.join(copy(), bundle()))

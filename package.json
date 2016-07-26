@@ -1,7 +1,7 @@
 {
   "name": "app-orchard",
   "version": "1.0.0",
-  "description": "A place where people go to design apps to be built by developers.",
+  "description": "Make your dream a reality with app orchard!",
   "main": "index.js",
   "scripts": {
     "start": "lite-server -c bs-config.js"
@@ -14,6 +14,7 @@
     "app",
     "creation",
     "design",
+    "dream",
     "dev"
   ],
   "author": "Timur Uzel <timurt.uzel@gmail.com> (https://github.com/timurtu)",
