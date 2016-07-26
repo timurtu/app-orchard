@@ -12,7 +12,8 @@ const paths = {
   
   entry: path.resolve('src/app.js'),
   src_root: path.resolve('src'),
-  dist_root: path.resolve('dist')
+  dist_root: path.resolve('dist'),
+  build_root: path.resolve('build')
 }
 
 gulp.task('paths', () => {

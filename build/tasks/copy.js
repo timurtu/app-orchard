@@ -7,11 +7,10 @@ const gulp = require('gulp')
 const Promise = require('bluebird')
 
 const paths = require('../paths')
-const log = require('../log')
 const test = require('../test')
 
 
-gulp.task('copy', (done) => test(copy, `Copied files.`, done))
+gulp.task('copy', (done) => test(copy, 'Copied files.', done))
 
 const copy = () => {
   
