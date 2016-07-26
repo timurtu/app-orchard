@@ -14,6 +14,5 @@ const copy = require('./copy')
 
 gulp.task('build', (done) => test(build, 'Built app.', done))
 
-const build = () => lint()
-  .then(clean)
-  .then(() => Promise.join(copy(), bundle()))
+const build = () => clean()
+  .then(() => Promise.join(lint(), copy(), bundle()))

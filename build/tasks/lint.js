@@ -10,7 +10,9 @@ const Promise = require('bluebird')
 const test = require('../test')
 const paths = require('../paths')
 
-gulp.task('lint', done => test(lint, 'Linted source code.', done))
+gulp.task('lint', (done) => {
+  test(lint, 'Linted source.', done)
+})
 
 const lint = () => {
   
@@ -18,11 +20,12 @@ const lint = () => {
   const srcGlob = path.join(paths.src_root, '**/*.js')
   
   return new Promise((resolve, reject) => {
-    gulp.src([buildGlob, srcGlob])
+    
+    return gulp.src([buildGlob, srcGlob])
       .pipe(eslint())
       .pipe(eslint.format())
-      .on('end', resolve)
       .on('error', reject)
+      .pipe(eslint.result(x => resolve(x)))
   })
 }
 

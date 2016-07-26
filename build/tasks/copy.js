@@ -4,23 +4,17 @@
 
 const path = require('path')
 const gulp = require('gulp')
-const Promise = require('bluebird')
 
+const promisifyStream = require('../utils').promisifyStream
 const paths = require('../paths')
 const test = require('../test')
 
 
 gulp.task('copy', (done) => test(copy, 'Copied files.', done))
 
-const copy = () => {
-  
-  return new Promise((resolve, reject) => {
-    
-    return gulp.src(path.join(paths.src_root, '**/*.html'))
-      .pipe(gulp.dest(paths.dist_root))
-      .on('end', resolve)
-      .on('error', reject)
-  })
-}
+const copy = () => promisifyStream(
+  gulp.src(path.join(paths.src_root, '**/*.html'))
+    .pipe(gulp.dest(paths.dist_root))
+)
 
 module.exports = copy
