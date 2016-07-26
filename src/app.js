@@ -4,4 +4,5 @@
 
 import './style.scss'
 
-document.write('it works')
+document.write('holy smokes')
+

@@ -16,3 +16,5 @@ gulp.task('build', (done) => test(build, 'Built app.', done))
 
 const build = () => clean()
   .then(() => Promise.join(lint(), copy(), bundle()))
+
+module.exports = build
