@@ -16,7 +16,7 @@ function promisifyStream(stream) {
   })
 }
 
-const testTask = (promise, message, done) => {
+function testTask(promise, message, done) {
   
   promise()
     .catch(e => log('red', e))
