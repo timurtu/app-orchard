@@ -1,7 +1,7 @@
 {
   "name": "app-orchard",
   "version": "1.0.0",
-  "description": "Build your dreams a reality.",
+  "description": "Make your dreams a reality.",
   "dependencies": {
     "domali": "^2.0.1"
   },
