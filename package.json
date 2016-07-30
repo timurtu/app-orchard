@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "description": "Make your dreams a reality.",
   "dependencies": {
-    "domali": "^2.0.1"
+    "domali": "^2.0.1",
+    "express": "^4.14.0"
   },
   "devDependencies": {
     "babel-core": "^6.11.4",
