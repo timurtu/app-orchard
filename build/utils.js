@@ -3,6 +3,7 @@
  */
 
 const Promise = require('bluebird')
+const log = require('./log')
 
 
 function promisifyStream(stream) {
@@ -15,6 +16,15 @@ function promisifyStream(stream) {
   })
 }
 
+const testTask = (promise, message, done) => {
+  
+  promise()
+    .catch(e => log('red', e))
+    .then(() => log('green', message))
+    .then(() => done())
+}
+
 module.exports = {
-  promisifyStream
+  promisifyStream,
+  testTask
 }

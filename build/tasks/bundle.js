@@ -6,7 +6,7 @@ const gulp = require('gulp')
 const Promise = require('bluebird')
 const execAsync = Promise.promisify(require('child_process').exec)
 
-const test = require('../test')
+const test = require('../utils').testTask
 const log = require('../log')
 
 

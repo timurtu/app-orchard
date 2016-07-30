@@ -7,7 +7,7 @@ const gulp = require('gulp')
 
 const promisifyStream = require('../utils').promisifyStream
 const paths = require('../paths')
-const test = require('../test')
+const test = require('../utils').testTask
 
 
 gulp.task('copy', (done) => test(copy, 'Copied files.', done))

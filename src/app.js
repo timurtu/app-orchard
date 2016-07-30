@@ -3,9 +3,8 @@
  */
 
 import './styles/main.scss'
-// import './styles/fonts.scss'
-
 import dom from 'domali'
+
 
 const [app, nav, title, wrapper, p] =
   dom.create('app', 'nav', 'h1', 'div', 'p')

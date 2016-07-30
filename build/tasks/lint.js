@@ -7,7 +7,7 @@ const eslint = require('gulp-eslint')
 const path = require('path')
 const Promise = require('bluebird')
 
-const test = require('../test')
+const test = require('../utils').testTask
 const paths = require('../paths')
 
 
