@@ -3,4 +3,4 @@
  */
 
 import './styles/main.scss'
-import './app'
+import './components/AppOrchard'
