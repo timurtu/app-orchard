@@ -1,3 +1,5 @@
+$roboto: 'Roboto', sans-serif;
+
 /**********************************
            Header Font
 **********************************/
@@ -8,10 +10,17 @@ h1 {
 }
 
 /**********************************
-          Paragraph Font
+            Main Font
 **********************************/
 p {
 
-  font-family: 'Roboto', sans-serif;
+  font-family: $roboto;
   font-size: 1em;
+}
+
+/**********************************
+           Other Font
+**********************************/
+small {
+  font-family: $roboto;
 }

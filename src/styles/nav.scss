@@ -2,15 +2,19 @@
               Navbar
 **********************************/
 $shadow: 0 .1em .25em rgba(0, 0, 0, .25);
+$greenish: rgba(72, 232, 168, .9);
 
 nav {
 
-  background-color: palegreen;
+  position: fixed;
+  left: 0;
+  right: 0;
+  background-color: $greenish;
   height: 1.75em;
   margin: 0;
   padding: .125em 0 .675em .75em;
-  border-bottom: .15em solid cadetblue;
   box-shadow: $shadow;
+  z-index: 1000;
 
   h1 {
     margin: 0;

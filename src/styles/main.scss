@@ -1,35 +1,24 @@
 @import 'fonts';
 @import 'nav';
+@import 'post';
 
 /**********************************
        General declarations
 **********************************/
 
 html, body {
-
   margin: 0;
 }
 
 body {
-
-  background: rgba(0, 255, 255, .25);
+  background-color: rgba(79, 255, 208, .8);
 }
 
 /**********************************
-         Wrapper Spacing
+             Wrapper
 **********************************/
 
 .wrapper {
 
-  display: table;
-  margin: 0 auto;
-}
-
-/**********************************
-           Text Spacing
-**********************************/
-
-.wrapper p {
-
-  margin: 1em;
+  padding: .5em 1em;
 }

@@ -1,0 +1,23 @@
+/**********************************
+              Navbar
+**********************************/
+
+.wrapper ul {
+  list-style: none;
+  margin: 3em 0;
+  padding: 0;
+}
+
+.wrapper ul li.post {
+
+  padding: 1em;
+  margin: 1em .5em;
+  background: rgba(92, 255, 144, .9);
+  border-radius: .25em;
+  box-shadow: 0 .25em .5em rgba(0, 0, 0, .25);
+
+  .friends {
+    position: absolute;
+    right: 3em;
+  }
+}
