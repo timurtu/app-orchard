@@ -9,16 +9,12 @@ const log = require('./log')
 
 
 const paths = {
-  
-  entry: path.resolve('src/app.js'),
+  entry: path.resolve('src/entry.js'),
   src_root: path.resolve('src'),
   dist_root: path.resolve('dist'),
-  build_root: path.resolve('build')
+  build_root: path.resolve('gulp')
 }
 
-gulp.task('paths', () => {
-  
-  log('cyan', `\n\n${JSON.stringify(paths, null, 2)}\n`)
-})
+gulp.task('paths', () => log('cyan', JSON.stringify(paths, null, 2)))
 
 module.exports = paths

@@ -11,9 +11,7 @@ const test = require('../utils').testTask
 const paths = require('../paths')
 
 
-gulp.task('lint', (done) => {
-  test(lint, 'Linted source.', done)
-})
+gulp.task('lint', done => test(lint, 'Linted source.', done))
 
 const lint = () => {
   
