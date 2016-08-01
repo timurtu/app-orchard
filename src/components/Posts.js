@@ -19,6 +19,7 @@ export class Posts extends React.Component {
               <small>Posted by {idea.author}</small>
               <img src="http://lorempixel.com/300/100"/>
               <p>{idea.info}</p>
+              <small className="comments">{idea.stars} comments</small>
             </li>
           )
         }

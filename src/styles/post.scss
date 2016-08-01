@@ -9,7 +9,7 @@
 }
 
 .wrapper ul li.post {
-  padding: 1em;
+  padding: .5em 0 2em 1em;
   margin: 1em .5em;
   background: rgb(92, 255, 144);
   border-radius: .25em;
@@ -20,16 +20,22 @@
     right: 3em;
   }
 
+  .comments {
+    position: absolute;
+    right: 3em;
+  }
+
   img {
     transition: .2s ease all;
     margin-top: 1em;
+    max-width: 100%;
 
     &:hover {
       cursor: pointer;
     }
   }
 
-  h1, .stars {
+  h1, .stars, .comments {
 
     &:hover {
       text-decoration: underline;
@@ -39,12 +45,7 @@
 
 }
 
-@media (max-width: 480px) {
-  //html { background: red; }
-}
 @media (min-width: 481px) and (max-width: 800px) {
-  //html { background: green; }
-
   .wrapper ul li.post img {
     position: relative;
     right: 5em;
@@ -52,13 +53,16 @@
   }
 
 }
+
 @media (min-width: 801px) {
-
-  //html { background: blue; }
-
-  .wrapper ul li.post img {
-    position: absolute;
-    right: 8em;
-    transform: translateY(-3.5em);
+  .wrapper ul li.post {
+    img {
+      position: absolute;
+      right: 8em;
+      transform: translateY(-3.5em);
+    }
+    p {
+      max-width: 18em;
+    }
   }
 }
