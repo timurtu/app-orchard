@@ -16,7 +16,7 @@ export class Posts extends React.Component {
             <li key={idea.id} className="post">
               <h1>{idea.name}</h1>
               <small className="stars">{idea.stars} stars</small>
-              <small>{idea.subinfo}</small>
+              <small>Posted by {idea.author}</small>
               <img src="http://lorempixel.com/300/100"/>
               <p>{idea.info}</p>
             </li>

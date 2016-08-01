@@ -6,22 +6,22 @@ export const ideas = [
   {
     id: 0,
     name: 'An app that eats your homework',
-    subinfo: 'Joined in 2013',
-    info: 'Kristy is an art director living in New York.',
+    author: 'Jane',
+    info: 'What if there was an app that ate your homework? This would help me very much.',
     stars: 22
   },
   {
     id: 1,
     name: 'An app that does your laundry',
-    subinfo: 'Joined in 2023',
-    info: 'Kristy is an art director living in China.',
+    author: 'Kristy',
+    info: 'I never have the time or the energy to do laundry so what if an app did it for me?',
     stars: 27
   },
   {
     id: 2,
     name: 'An app that does your dishes',
-    subinfo: 'Joined in 2016',
-    info: 'John is not an art director living in Seattle.',
+    author: 'John',
+    info: 'Just press a button and go.',
     stars: 2
   }
 ]
