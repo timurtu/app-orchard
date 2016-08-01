@@ -9,7 +9,7 @@
 }
 
 .wrapper ul li.post {
-  padding: .5em 0 2em 1em;
+  padding: .5em 1em 2em 1em;
   margin: 1em .5em;
   background: rgb(92, 255, 144);
   border-radius: .25em;
@@ -27,8 +27,9 @@
 
   img {
     transition: .2s ease all;
-    margin-top: 1em;
     max-width: 100%;
+    display: table;
+    margin: 1em auto;
 
     &:hover {
       cursor: pointer;
