@@ -4,16 +4,18 @@ $roboto: 'Roboto', sans-serif;
            Header Font
 **********************************/
 h1 {
-
   font-size: 1.25em;
   font-family: 'Pacifico', serif;
+}
+
+.wrapper h1 {
+  font-family: 'PT Serif', serif;
 }
 
 /**********************************
             Main Font
 **********************************/
 p {
-
   font-family: $roboto;
   font-size: 1em;
 }
