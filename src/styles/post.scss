@@ -15,8 +15,50 @@
   border-radius: .25em;
   box-shadow: 0 .25em .5em rgba(0, 0, 0, .25);
 
-  .friends {
+  .stars {
     position: absolute;
     right: 3em;
+  }
+
+  img {
+    transition: .2s ease all;
+    margin-top: 1em;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  h1, .stars {
+
+    &:hover {
+      text-decoration: underline;
+      cursor: pointer;
+    }
+  }
+
+}
+
+@media (max-width: 480px) {
+  //html { background: red; }
+}
+@media (min-width: 481px) and (max-width: 800px) {
+  //html { background: green; }
+
+  .wrapper ul li.post img {
+    position: relative;
+    right: 5em;
+    bottom: 1.35em;
+  }
+
+}
+@media (min-width: 801px) {
+
+  //html { background: blue; }
+
+  .wrapper ul li.post img {
+    position: absolute;
+    right: 8em;
+    transform: translateY(-3.5em);
   }
 }
