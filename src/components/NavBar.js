@@ -9,7 +9,7 @@ export class NavBar extends React.Component {
   render() {
     return(
       <nav>
-        <h1>App Orchard</h1>
+        <h1>{this.props.title}</h1>
       </nav>
     )
   }

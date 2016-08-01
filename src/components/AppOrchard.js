@@ -7,15 +7,17 @@ import ReactDOM from 'react-dom'
 import dom from 'domali'
 
 import { NavBar } from './NavBar'
-import { Wrapper } from './Wrapper'
+import { Posts } from './Posts'
 
 
 class AppOrchard extends React.Component {
   render() {
     return (
       <app-orchard>
-        <NavBar/>
-        <Wrapper/>
+        <NavBar title="App Orchard" />
+        <div className="wrapper">
+          <Posts/>
+        </div>
       </app-orchard>
     )
   }
