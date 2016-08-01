@@ -14,12 +14,9 @@ module.exports = {
   
   module: {
     loaders: [
-      { test: /\.js$/, loader: 'babel' },
+      { test: /\.js$/, loaders: ['babel'] },
       { test: /\.scss$/, loader: 'style!css!sass' },
-      {
-        test: /\.(eot|woff|woff2|ttf|svg|png|jpg)$/,
-        loader: 'url-loader?limit=30000&name=[name]-[hash].[ext]'
-      }
+      { test: /\.(png|woff|woff2|eot|ttf|svg)$/, loader: 'url-loader?limit=100000' }
     ]
   }
   
