@@ -27,7 +27,7 @@
 
   img {
     transition: .2s ease all;
-    max-width: 100%;
+    max-width: 75%;
     display: table;
     margin: 1em auto;
 
@@ -51,8 +51,9 @@
     img {
       position: absolute;
       right: 8em;
-      transform: translateY(-3.5em);
+      transform: translate(-1em, -4em);
     }
+
     p {
       max-width: 18em;
     }

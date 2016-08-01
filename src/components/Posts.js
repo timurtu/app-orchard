@@ -18,7 +18,7 @@ export class Posts extends React.Component {
               <small className="stars">{idea.stars} stars</small>
               <small>Posted by {idea.author}</small>
               <div className="image">
-                <img src="http://lorempixel.com/300/100"/>
+                <img src="http://lorempixel.com/300/120"/>
               </div>
               <p>{idea.info}</p>
               <small className="comments">{idea.stars} comments</small>
