@@ -11,9 +11,7 @@ export class Posts extends React.Component {
   render() {
     return (
       <ul>
-        {
-          this._getPosts()
-        }
+        {this._getPosts()}
       </ul>
     )
   }

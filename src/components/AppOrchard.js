@@ -14,7 +14,7 @@ class AppOrchard extends React.Component {
   render() {
     return (
       <app-orchard>
-        <NavBar title="App Orchard" />
+        <NavBar/>
         <div className="wrapper">
           <Posts/>
         </div>
