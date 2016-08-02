@@ -27,7 +27,8 @@
 
   img {
     transition: .2s ease all;
-    max-width: 75%;
+    max-width: 100%;
+    max-height: 120px;
     display: table;
     margin: 1em auto;
 
@@ -46,7 +47,7 @@
 
 }
 
-@media (min-width: 801px) {
+@media (min-width: 886px) {
   .wrapper ul li.post {
     img {
       position: absolute;
