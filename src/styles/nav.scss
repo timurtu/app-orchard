@@ -4,7 +4,7 @@
 $shadow: 0 .1em .25em rgba(0, 0, 0, .25);
 $greenish: rgba(72, 232, 168, .9);
 
-nav {
+nav, footer {
   position: fixed;
   left: 0;
   right: 0;
@@ -24,6 +24,25 @@ nav {
       cursor: pointer;
       color: antiquewhite;
       text-shadow: $shadow;
+    }
+  }
+}
+
+/**********************************
+              Footer
+**********************************/
+footer {
+  bottom: 0;
+
+  i {
+    position: absolute;
+    right: .5em;
+    bottom: .125em;
+    color: rgba(0, 0, 0, 0.5);
+    transition: .2s ease all;
+    &:hover {
+      color: rgb(205, 255, 255);
+      text-shadow: 0 .1em .1em rgba(0, 0, 0, .25);
     }
   }
 }

@@ -7,6 +7,7 @@ import ReactDOM from 'react-dom'
 import dom from 'domali'
 
 import { NavBar } from './NavBar'
+import { Footer } from './Footer'
 import { Posts } from './Posts'
 
 
@@ -18,6 +19,7 @@ class AppOrchard extends React.Component {
         <div className="wrapper">
           <Posts/>
         </div>
+        <Footer/>
       </app-orchard>
     )
   }
