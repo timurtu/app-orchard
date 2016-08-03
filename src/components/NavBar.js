@@ -5,12 +5,7 @@
 import React from 'react'
 
 
-export class NavBar extends React.Component {
-  render() {
-    return(
-      <nav>
-        <h1>App Orchard</h1>
-      </nav>
-    )
-  }
-}
+export const NavBar = props =>
+  <nav>
+    <h1>App Orchard</h1>
+  </nav>

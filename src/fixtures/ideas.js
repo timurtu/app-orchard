@@ -8,7 +8,7 @@ export const ideas = [
     name: 'An app that eats your homework',
     author: 'Jane',
     info: 'What if there was an app that ate your homework? This would help me very much.',
-    stars: 22
+    stars: 52
   },
   {
     id: 1,

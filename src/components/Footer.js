@@ -5,12 +5,7 @@
 import React from 'react'
 
 
-export class Footer extends React.Component {
-  render() {
-    return(
-      <footer>
-        <i className="fa fa-plus-circle fa-3x"/>
-      </footer>
-    )
-  }
-}
+export const Footer = props =>
+  <footer>
+    <i className="fa fa-plus-circle fa-3x"/>
+  </footer>

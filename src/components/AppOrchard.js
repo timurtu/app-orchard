@@ -11,18 +11,14 @@ import { Footer } from './Footer'
 import { Posts } from './Posts'
 
 
-class AppOrchard extends React.Component {
-  render() {
-    return (
-      <app-orchard>
-        <NavBar/>
-        <div className="wrapper">
-          <Posts/>
-        </div>
-        <Footer/>
-      </app-orchard>
-    )
-  }
-}
+const AppOrchard = props =>
+  <app-orchard>
+    <NavBar/>
+    <div className="wrapper">
+      <Posts/>
+    </div>
+    <Footer/>
+  </app-orchard>
+
 
 ReactDOM.render(<AppOrchard/>, dom.getId('app'))
