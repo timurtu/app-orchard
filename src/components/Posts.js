@@ -14,9 +14,7 @@ export const Posts = props =>
         <h1>{idea.name}</h1>
         <small className="stars">{idea.stars} stars</small>
         <small>Posted by {idea.author}</small>
-        <div className="image">
-          <img src="http://lorempixel.com/400/120"/>
-        </div>
+        <img src={idea.image}/>
         <p>{idea.info}</p>
         <small className="comments">{idea.stars} comments</small>
       </li>
