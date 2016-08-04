@@ -6,7 +6,7 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 
 import { Posts } from './Posts'
-import {Footer} from './Footer'
+import { Footer } from './Footer'
 
 
 const NavBar = () =>

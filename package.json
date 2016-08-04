@@ -20,6 +20,7 @@
     "gulp": "^3.9.1",
     "gulp-eslint": "^3.0.1",
     "gulp-util": "^3.0.7",
+    "jsx-loader": "^0.13.2",
     "node-sass": "^3.8.0",
     "react": "^15.3.0",
     "react-dom": "^15.3.0",
@@ -28,12 +29,10 @@
     "require-dir": "^0.3.0",
     "rimraf": "^2.5.4",
     "sass-loader": "^4.0.0",
-    "semantic-ui": "^2.2.2",
     "source-map-loader": "^0.1.5",
     "style-loader": "^0.13.1",
     "url-loader": "^0.5.7",
     "webpack": "^1.13.1",
-    "webpack-dev-middleware": "^1.6.1",
     "webpack-dev-server": "^1.14.1"
   },
   "scripts": {
