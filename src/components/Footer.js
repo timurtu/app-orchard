@@ -1,11 +1,20 @@
 /**
- * Created by timur on 7/31/16.
+ * Created by timur on 8/3/16.
  */
 
 import React from 'react'
+import { store } from '../store'
 
 
-export const Footer = props =>
-  <footer>
-    <i className="fa fa-plus-circle fa-3x"/>
-  </footer>
+const add = () => store.dispatch({ type: 'add' })
+const subtract = () => store.dispatch({ type: 'subtract' })
+
+store.subscribe(() => console.log(store.getState()))
+
+export const Footer = () => <footer><Counter/></footer>
+
+const Counter = () =>
+  <div className="icons">
+    <i onClick={add} className="fa fa-plus-circle fa-2x"/>
+    <i onClick={subtract} className="fa fa-minus-circle fa-2x"/>
+  </div>

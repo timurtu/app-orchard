@@ -4,14 +4,17 @@
 
 import React from 'react'
 import ReactDOM from 'react-dom'
-import dom from 'domali'
 
-import { NavBar } from './NavBar'
-import { Footer } from './Footer'
 import { Posts } from './Posts'
+import {Footer} from './Footer'
 
 
-const AppOrchard = props =>
+const NavBar = () =>
+  <nav>
+    <h1>App Orchard</h1>
+  </nav>
+
+const AppOrchard = () =>
   <app-orchard>
     <NavBar/>
     <div className="wrapper">
@@ -20,5 +23,4 @@ const AppOrchard = props =>
     <Footer/>
   </app-orchard>
 
-
-ReactDOM.render(<AppOrchard/>, dom.getId('app'))
+ReactDOM.render(<AppOrchard/>, document.getElementById('app'))
