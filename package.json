@@ -3,11 +3,11 @@
   "version": "1.0.0",
   "description": "Make your dream come true.",
   "scripts": {
-    "start": "npm-run-all --parallel watch cover test",
+    "start": "npm-run-all --parallel watch test",
     "test": "npm-run-all --sequential cover jest --parallel watch-tests",
     "watch": "gulp watch",
     "jest": "jest",
-    "watch-tests": "jest --watch",
+    "watch-tests": "jest --watch=all",
     "cover": "jest --coverage"
   },
   "devDependencies": {
