@@ -3,9 +3,7 @@
  */
 
 import React from 'react'
-
 import { ideas } from '../fixtures/ideas'
-
 
 export const Posts = () =>
   <ul>

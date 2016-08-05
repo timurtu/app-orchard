@@ -3,8 +3,6 @@
  */
 
 import React from 'react'
-
 import { Counter } from './components'
-
 
 export const Footer = () => <footer><Counter/></footer>
