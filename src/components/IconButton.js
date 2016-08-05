@@ -6,4 +6,6 @@ import React from 'react'
 import FontAwesome from 'react-fontawesome'
 
 export const IconButton = props =>
-  <FontAwesome className="icon-button fa-2x" name={props.name}/>
+  <span onClick={props.click}>
+    <FontAwesome className="icon-button fa-2x" name={props.name}/>
+  </span>

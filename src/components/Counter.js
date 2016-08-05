@@ -7,11 +7,11 @@ import { store } from '../store'
 import { IconButton } from './components'
 
 export const Counter = () =>
-  <div className="icons">
-    <span onClick={() => store.dispatch({ type: 'add' })}>
-      <IconButton name="plus-circle"/>
-    </span>
-    <span onClick={() => store.dispatch({ type: 'subtract' })}>
-      <IconButton name="minus-circle"/>
-    </span>
+  <div className="counter">
+    <IconButton
+      name="plus-circle"
+      click={() => store.dispatch({ type: 'add' })}/>
+    <IconButton
+      name="minus-circle"
+      click={() => store.dispatch({ type: 'subtract' })}/>
   </div>
