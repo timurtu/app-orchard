@@ -33,21 +33,4 @@ nav, footer {
 **********************************/
 footer {
   bottom: 0;
-
-  .icons {
-    position: absolute;
-    right: 0.5em;
-    bottom: .125em;
-  }
-
-  i {
-    margin: .05em;
-    color: rgba(0, 0, 0, 0.5);
-    transition: .2s ease all;
-    &:hover {
-      cursor: pointer;
-      color: rgb(205, 255, 255);
-      text-shadow: 0 .1em .1em rgba(0, 0, 0, .25);
-    }
-  }
 }

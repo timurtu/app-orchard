@@ -5,18 +5,14 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 
-import { Posts } from './Posts'
-import { Footer } from './Footer'
+import { store } from '../store'
+import { Posts, Footer, Toolbar } from './components'
 
-
-const NavBar = () =>
-  <nav>
-    <h1>App Orchard</h1>
-  </nav>
+store.subscribe(() => console.log(store.getState())) // eslint-disable-line
 
 const AppOrchard = () =>
   <app-orchard>
-    <NavBar/>
+    <Toolbar title="App Orchard"/>
     <div className="wrapper">
       <Posts/>
     </div>
