@@ -5,9 +5,9 @@
 const gulp = require('gulp')
 const Promise = require('bluebird')
 const execAsync = Promise.promisify(require('child_process').exec)
+const log = require('gutil-color-log')
 
 const test = require('../utils').testTask
-const log = require('../log')
 
 
 gulp.task('bundle', done => test(bundle, 'Bundled app.', done))

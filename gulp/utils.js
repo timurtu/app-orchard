@@ -3,7 +3,7 @@
  */
 
 const Promise = require('bluebird')
-const log = require('./log')
+const log = require('gutil-color-log')
 
 
 function promisifyStream(stream) {

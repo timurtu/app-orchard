@@ -5,20 +5,19 @@
 const gulp = require('gulp')
 const Promise = require('bluebird')
 const execAsync = Promise.promisify(require('child_process').exec)
-
+const log = require('gutil-color-log')
 const test = require('../utils').testTask
-const log = require('../log')
 
 
-gulp.task('serve', done => test(serve, 'Serving app.', done))
+gulp.task('client', done => test(client, 'Serving client.', done))
 
 const command = 'node_modules/.bin/webpack-dev-server --inline --hot --content-base dist/prod/'
 
-const serve = () => {
+const client = () => {
   
-  log('cyan', 'Serving app at http://localhost:8080')
+  log('cyan', 'Client running at http://localhost:8080')
   
   return execAsync(command)
 }
 
-module.exports = serve
+module.exports = client

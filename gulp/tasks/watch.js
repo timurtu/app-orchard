@@ -4,11 +4,12 @@
 
 const gulp = require('gulp')
 const path = require('path')
-
+const Promise = require('bluebird')
 const paths = require('../paths')
-const log = require('../log')
+const log = require('gutil-color-log')
 const build = require('./build')
-const serve = require('./serve')
+const client = require('./client')
+const server = require('./server')
 
 
 gulp.task('watch', () => watch())
@@ -16,7 +17,7 @@ gulp.task('watch', () => watch())
 const watch = () => {
   
   build()
-    .then(serve)
+    .then(() => Promise.join(client(), server()))
     .catch(e => log('red', e))
   
   gulp.watch(path.join(paths.src_root, '**/*'), ['build'])
