@@ -12,7 +12,7 @@ const log = require('../log')
 
 gulp.task('serve', done => test(serve, 'Serving app.', done))
 
-const command = 'node_modules/.bin/webpack-dev-server --inline --hot --content-base dist/'
+const command = 'node_modules/.bin/webpack-dev-server --inline --hot --content-base dist/prod/'
 
 const serve = () => {
   

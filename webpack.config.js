@@ -6,13 +6,13 @@
 module.exports = {
   
   entry: [
-    'webpack-dev-server/client?http://0.0.0.0:8080', // WebpackDevServer host and port
-    'webpack/hot/only-dev-server', // "only" prevents reload on syntax errors
-    './src/entry.js' // Your appʼs entry point
+    'webpack-dev-server/client?http://0.0.0.0:8080',
+    'webpack/hot/only-dev-server',
+    './src/app/entry.js'
   ],
   
   output: {
-    path: './dist',
+    path: './dist/prod',
     filename: 'bundle.js'
   },
   
