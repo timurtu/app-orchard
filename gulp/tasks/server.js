@@ -17,9 +17,11 @@ const command = `node_modules/.bin/nodemon ${path.join(paths.dist_root, 'src/ser
 
 const server = () => {
   
-  log('cyan', 'Server running at http://localhost:8080')
+  log('cyan', 'Server running on port 3000')
   
   return execAsync(command)
+    .then(out => /error/.test(out) ? log('red', out) : log('green', out))
+  
 }
 
 module.exports = server

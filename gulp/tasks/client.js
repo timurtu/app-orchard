@@ -18,6 +18,7 @@ const client = () => {
   log('cyan', 'Client running at http://localhost:8080')
   
   return execAsync(command)
+    .then(out => /error/.test(out) ? log('red', out) : log('green', out))
 }
 
 module.exports = client

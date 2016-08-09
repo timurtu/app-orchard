@@ -8,15 +8,20 @@ import ReactDOM from 'react-dom'
 import { store } from '../store'
 import { Posts, Footer, Toolbar } from './components'
 
-store.subscribe(() => console.log(store.getState())) // eslint-disable-line
 
-const AppOrchard = () =>
-  <app-orchard>
-    <Toolbar title="App Orchard"/>
-    <div className="wrapper">
-      <Posts/>
-    </div>
-    <Footer/>
-  </app-orchard>
+class AppOrchard extends React.Component {
+  
+  render() {
+    return (
+      <div>
+        <Toolbar title="App Orchard"/>
+        <div className="wrapper">
+          <Posts/>
+        </div>
+        <Footer/>
+      </div>
+    )
+  }
+}
 
-ReactDOM.render(<AppOrchard/>, document.getElementById('app'))
+ReactDOM.render(<AppOrchard/>, document.getElementById('root'))

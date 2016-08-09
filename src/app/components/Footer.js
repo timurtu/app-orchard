@@ -3,6 +3,6 @@
  */
 
 import React from 'react'
-import { Counter } from './components'
+import { AddButton } from './components'
 
-export const Footer = () => <footer><Counter/></footer>
+export const Footer = () => <footer><AddButton/></footer>

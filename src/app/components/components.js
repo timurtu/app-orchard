@@ -4,6 +4,6 @@
 
 export * from './Toolbar'
 export * from './Posts'
-export * from './Counter'
+export * from './AddButton'
 export * from './Footer'
 export * from './IconButton'

@@ -3,9 +3,10 @@
   "version": "1.0.0",
   "description": "Make your dream come true.",
   "scripts": {
-    "start": "npm-run-all --parallel watch test",
+    "start": "npm-run-all build --parallel watch server",
     "test": "npm-run-all --sequential cover jest --parallel watch-tests",
     "watch": "gulp watch",
+    "server": "nodemon dist/src/server/index.js",
     "jest": "jest",
     "watch-tests": "jest --watch=all",
     "cover": "jest --coverage"
