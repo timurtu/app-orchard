@@ -3,8 +3,10 @@
  */
 
 import { combineReducers } from 'redux'
-import counter from './counter'
+import { ideas } from './ideas'
+import { addIdea } from './addIdea'
 
-const rootReducer = combineReducers({ counter })
+
+const rootReducer = combineReducers({ ideas, addIdea })
 
 export default rootReducer

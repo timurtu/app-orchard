@@ -2,7 +2,7 @@
 
 - clone this repo
 
-- `cd` into it in a terminal
+- `cd` into it
 
 - `npm install` to install dependencies
 

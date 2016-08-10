@@ -1,12 +1,15 @@
 {
   "name": "app-orchard",
   "version": "1.0.0",
-  "description": "Make your dream come true.",
+  "description": "Make your dream app a reality.",
   "scripts": {
-    "start": "npm-run-all build --parallel watch server",
-    "test": "npm-run-all --sequential cover jest --parallel watch-tests",
+    "start": "npm-run-all --sequential build --parallel watch server",
+    "build": "gulp build",
     "watch": "gulp watch",
-    "server": "nodemon dist/src/server/index.js",
+    "clean": "rimraf dist",
+    "server": "nodemon dist/index.js",
+    "client": "webpack-dev-server --inline --hot --content-base dist/prod/",
+    "test": "npm-run-all --sequential clean cover jest --parallel watch-tests",
     "jest": "jest",
     "watch-tests": "jest --watch=all",
     "cover": "jest --coverage"
@@ -22,6 +25,8 @@
     "bluebird": "^3.4.1",
     "chai": "^3.5.0",
     "css-loader": "^0.23.1",
+    "deep-freeze": "0.0.1",
+    "domali": "^2.0.1",
     "eslint": "^3.2.0",
     "eslint-plugin-react": "^5.2.2",
     "file-loader": "^0.9.0",

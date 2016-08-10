@@ -15,7 +15,7 @@ gulp.task('transpile', done => test(transpile, 'Transpiled source.', done))
 const transpile = () => promisifyStream(
   gulp.src(path.join(paths.src_root, '**/*.js'))
     .pipe(babel())
-    .pipe(gulp.dest(path.join(paths.dist_root, 'src')))
+    .pipe(gulp.dest(paths.dist_root))
 )
 
 module.exports = transpile

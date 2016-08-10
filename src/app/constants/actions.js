@@ -3,4 +3,4 @@
  */
 
 export const add = { type: 'add' }
-export const subtract = { type: 'subtract' }
+export const remove = { type: 'remove' }

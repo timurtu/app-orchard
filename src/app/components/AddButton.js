@@ -3,7 +3,7 @@
  */
 
 import React from 'react'
-import { store } from '../store'
+import store from '../store'
 import { IconButton } from './components'
 import { add } from '../constants/actions'
 
