@@ -11,7 +11,7 @@ const test = require('../utils').testTask
 
 gulp.task('client', done => test(client, 'Serving client.', done))
 
-const command = 'node_modules/.bin/webpack-dev-server --inline --hot --content-base dist/prod/'
+const command = 'node_modules/.bin/webpack-dev-server --inline --hot --content-base dist/'
 
 const client = () => {
   

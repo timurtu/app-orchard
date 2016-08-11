@@ -2,18 +2,26 @@
  * Created by timur on 7/26/16.
  */
 
+const appEntry = './src/app/entry.js'
 
 module.exports = {
   
-  entry: [
-    // 'webpack-dev-server/client?http://0.0.0.0:8080',
-    // 'webpack/hot/only-dev-server',
-    './src/app/entry.js'
-  ],
+  
+  entry: {
+    
+    app: process.env.NODE_ENV === 'prod' ? appEntry :
+      [
+        'webpack-dev-server/client?http://0.0.0.0:8080',
+        'webpack/hot/only-dev-server',
+        appEntry
+      ],
+    
+    test: ['./test/entry']
+  },
   
   output: {
-    path: './dist/prod',
-    filename: 'bundle.js'
+    path: './dist',
+    filename: '[name].js'
   },
   
   module: {

@@ -6,7 +6,7 @@
 
 - `npm install` to install dependencies
 
-- `gulp watch` to start the app
+- `npm start` to start the app
 
 - `npm test` to run unit tests
 

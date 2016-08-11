@@ -3,6 +3,8 @@
  */
 
 import React from 'react'
-import { AddButton } from './components'
+// import { AddButton } from './components'
 
-export const Footer = () => <footer><AddButton/></footer>
+export const Footer = () => <footer></footer>
+
+// <AddButton/>

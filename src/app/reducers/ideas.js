@@ -2,18 +2,23 @@
  * Created by timur on 8/3/16.
  */
 
-export const ideas = (state = 0, action) => {
+const ideas = (state = [], action) => {
+  
+  
   
   /* eslint-disable indent */
   switch (action.type) {
-    case 'add':
-      return state + 1
-    case 'remove':
-      return state - 1
+    case 'add_idea':
+      
+      return [...state, {
+        title: action.title,
+        id: action.id
+      }]
+    case 'remove_idea':
     default:
       return state
   }
   /* eslint-enable indent */
 }
 
-
+export default ideas

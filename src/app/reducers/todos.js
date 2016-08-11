@@ -2,7 +2,7 @@
  * Created by timur on 8/9/16.
  */
 
-export const todos = (state = [], action) => {
+const ideas = (state = [], action) => {
   
   /* eslint-disable indent */
   switch (action.type) {
@@ -33,3 +33,5 @@ export const todos = (state = [], action) => {
   }
   /* eslint-enable indent */
 }
+
+export default ideas

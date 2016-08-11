@@ -8,7 +8,13 @@ const paths = require('../paths')
 const client = require('./client')
 
 
-gulp.task('watch', () => {
+gulp.task('watch', ['test'], () => {
+  
   client()
-  gulp.watch(path.join(paths.src_root, '**/*'), ['build'])
+  
+  gulp.watch([
+    path.join(paths.build_root, '**/*'),
+    path.join(paths.src_root, '**/*'),
+    path.join(paths.test_root, '**/*')
+  ], ['test'])
 })

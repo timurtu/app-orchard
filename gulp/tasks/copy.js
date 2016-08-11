@@ -14,7 +14,7 @@ gulp.task('copy', done => test(copy, 'Copied files.', done))
 
 const copy = () => promisifyStream(
   gulp.src(path.join(paths.src_root, '**/*.html'))
-    .pipe(gulp.dest(path.join(paths.dist_root, 'prod')))
+    .pipe(gulp.dest(paths.dist_root))
 )
 
 module.exports = copy
