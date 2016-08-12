@@ -10,7 +10,9 @@ const client = require('./client')
 
 gulp.task('watch', ['test'], () => {
   
-  client()
+  if(process.env.NODE_ENV === 'dev') {
+    client()
+  }
   
   gulp.watch([
     path.join(paths.build_root, '**/*'),

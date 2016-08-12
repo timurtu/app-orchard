@@ -4,16 +4,15 @@
 
 const ideas = (state = [], action) => {
   
-  
-  
   /* eslint-disable indent */
   switch (action.type) {
     case 'add_idea':
       
-      return [...state, {
+      return [{
         title: action.title,
-        id: action.id
-      }]
+        id: action.id,
+        stars: 0
+      }, ...state]
     case 'remove_idea':
     default:
       return state

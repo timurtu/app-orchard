@@ -3,58 +3,78 @@
  */
 
 import React from 'react'
-import store from '../store'
 import { IconButton } from './components'
+import store from '../store'
 
 
-let nextTodoId = 0
-export default class IdeaList extends React.Component {
+const title = 'An app that '
+
+class IdeaList extends React.Component {
   
   render() {
     
     const { ideas } = this.props
     
-    const title = 'An app that '
-    
     return (
       <div>
-        <input ref={node => {
+        
+        <input ref={ node => {
           this.input = node
         }} autoFocus="true" defaultValue={title} className="input-box-bottom"/>
-        
         <div style={{
           position: 'fixed',
           right: '1em',
-          bottom: '.075em',
+          bottom: '-0.125em',
           zIndex: 30
         }}>
           <IconButton
             name="plus-circle fa-3x"
             click={() => {
               
-              store.dispatch({
-                type: 'ADD_TODO',
-                text: this.input.value,
-                id: nextTodoId++
-              })
+              const minLength = 25
+              const inputValue = this.input.value
+              const isStrictIdeaTitle = inputValue.startsWith(title)
+              const isGreaterThanMinLength = inputValue.length > minLength
               
+              if (isStrictIdeaTitle && isGreaterThanMinLength) {
+                
+                store.dispatch({
+                  type: 'add_idea',
+                  title: inputValue,
+                  id: Math.floor(Math.random() * Date.now())
+                })
+                
+                this.input.value = title
+              }
+              
+              if (!isStrictIdeaTitle) {
+                console.log(`Your idea must start with "${title}".`)
+                this.input.value = title
+              }
+              
+              if (!isGreaterThanMinLength) {
+                console.log(`Your idea must be greater than ${minLength} characters.`)
+              }
               this.input.value = title
+              
             }}/>
         </div>
         <ul>
-          {ideas.map(idea =>
-            <li key={idea.id}
-                onClick={() => {
-                  store.dispatch({
-                    type: 'TOGGLE_TODO',
-                    id: idea.id
-                  })
-                }}>
-              {idea.text}
-            </li>
-          )}
+          {ideas
+            .map(idea =>
+              <li key={idea.id} className="post">
+                <h1>{idea.title}</h1>
+                <small>{idea.author} <i className="fa fa-user"/></small>
+                <small className="pull-right">{idea.stars} <i className="fa fa-star"/></small>
+                <img src={idea.image}/>
+                <p>{idea.info}</p>
+              </li>
+            )}
         </ul>
       </div>
     )
   }
 }
+
+
+export default IdeaList

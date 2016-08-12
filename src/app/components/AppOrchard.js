@@ -6,16 +6,16 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import { Posts, Footer, Toolbar } from './components'
 import IdeaList from './IdeaList'
+import Dialog from './Dialog'
 import store from '../store'
 
-const AppOrchard = ({
-  ideas
-}) => (
-  <div>
+const AppOrchard = ({ ideas }) => (
+  <div className="container">
     <Toolbar title="App Orchard"/>
     <div className="wrapper">
+      {/*<Dialog/>*/}
       <IdeaList ideas={ideas}/>
-      <Posts/>
+      {/*<Posts/>*/}
     </div>
     <Footer/>
   </div>

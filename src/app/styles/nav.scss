@@ -9,14 +9,14 @@ nav, footer {
   left: 0;
   right: 0;
   background-color: $greenish;
-  height: 1.75em;
+  height: 2.5em;
   margin: 0;
   padding: .125em 0 .675em .75em;
   box-shadow: $shadow;
   z-index: 20;
 
   h1 {
-    margin: 0;
+    margin: .3em 0;
     transition: .2s ease all;
     width: 5.5em;
 

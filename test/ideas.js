@@ -16,14 +16,45 @@ describe('ideas', () => {
       const stateAfter = [
         {
           title: 'An app that ends world hunger',
-          id: 0
+          id: 0,
+          stars: 0
         }
       ]
       
       expect(ideas(stateBefore, {
         type: 'add_idea',
         title: 'An app that ends world hunger',
-        id: 0
+        id: 0,
+        stars: 0
+      })).to.deep.equal(stateAfter)
+      
+    })
+    it('should add a new idea object to the beginning of the list', () => {
+      
+      const stateBefore = [
+        {
+          title: 'An app that ends world hunger',
+          id: 0,
+          stars: 0
+        }
+      ]
+      const stateAfter = [
+        {
+          title: 'An app that talks to animals',
+          id: 1,
+          stars: 0
+        },
+        {
+          title: 'An app that ends world hunger',
+          id: 0,
+          stars: 0
+        }
+      ]
+      
+      expect(ideas(stateBefore, {
+        type: 'add_idea',
+        title: 'An app that talks to animals',
+        id: 1
       })).to.deep.equal(stateAfter)
       
     })

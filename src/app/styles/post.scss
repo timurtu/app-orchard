@@ -9,21 +9,11 @@
 }
 
 .wrapper ul li.post {
-  padding: .5em 1em 2em 1em;
+  padding: 1em;
   margin: 1em .5em;
   background: rgb(92, 255, 144);
   border-radius: .25em;
   box-shadow: 0 .25em .5em rgba(0, 0, 0, .25);
-
-  .stars {
-    position: absolute;
-    right: 3em;
-  }
-
-  .comments {
-    position: absolute;
-    right: 3em;
-  }
 
   img {
     transition: .2s ease all;
@@ -37,7 +27,8 @@
     }
   }
 
-  h1, .stars, .comments {
+  h1 {
+    margin: .25em 0 1em 0;
 
     &:hover {
       text-decoration: underline;
