@@ -18,9 +18,13 @@ class IdeaList extends React.Component {
     return (
       <div>
         
-        <input ref={ node => {
-          this.input = node
-        }} autoFocus="true" defaultValue={title} className="input-box-bottom"/>
+        <input
+          ref={ node => {
+            this.input = node
+          }}
+          autoFocus="true"
+          defaultValue={title}
+          className="input-box-bottom"/>
         <div style={{
           position: 'fixed',
           right: '1em',

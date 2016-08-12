@@ -2,18 +2,15 @@
  * Created by timur on 7/26/16.
  */
 
-const appEntry = './src/app/entry.js'
-
 module.exports = {
   
   
   entry: {
     
-    app: process.env.NODE_ENV === 'prod' ? appEntry :
-      [
+    app:[
         'webpack-dev-server/client?http://0.0.0.0:8080',
         'webpack/hot/only-dev-server',
-        appEntry
+      './src/app/entry.js'
       ],
     
     test: ['./test/entry']

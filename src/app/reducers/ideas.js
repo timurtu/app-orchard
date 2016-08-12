@@ -13,6 +13,7 @@ const ideas = (state = [], action) => {
         id: action.id,
         stars: 0
       }, ...state]
+    
     case 'remove_idea':
     default:
       return state

@@ -2,6 +2,7 @@
  * Created by timur on 7/26/16.
  */
 
+import '../styles/main.scss'
 import React from 'react'
 import ReactDOM from 'react-dom'
 import { Posts, Footer, Toolbar } from './components'
