@@ -4,11 +4,12 @@
 
 const gulp = require('gulp')
 const Promise = require('bluebird')
-const transpile = require('./transpile')
+
 const test = require('../utils').testTask
 const lint = require('./lint')
 const clean = require('./clean')
 const bundle = require('./bundle')
+const transpile = require('./transpile')
 const copy = require('./copy')
 
 

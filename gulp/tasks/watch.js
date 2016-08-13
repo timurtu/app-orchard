@@ -11,11 +11,15 @@ const build = require('./build')
 const test = require('./test')
 
 
-gulp.task('watch', () => gulp.watch([
-    path.join(paths.build_root, '**/*'),
+gulp.task('watch', () => {
+  
+  gulp.watch([
     path.join(paths.src_root, '**/*'),
     path.join(paths.test_root, '**/*')
-  ], () => build()
+  ], () => buildAndTest())
+})
+
+const buildAndTest = () =>
+  build()
     .then(() => test())
     .catch(e => log('red', e))
-))

@@ -4,8 +4,9 @@
 
 import { combineReducers } from 'redux'
 import ideas from './ideas'
+import alerts from './alerts'
 
 
-const rootReducer = combineReducers({ ideas })
+const rootReducer = combineReducers({ ideas, alerts })
 
 export default rootReducer
