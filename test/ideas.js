@@ -7,10 +7,11 @@ import deepFreeze from 'deep-freeze'
 import ideas from '../src/app/reducers/ideas'
 
 
-describe('ideas', () => {
+describe('ideas reducer', () => {
   
-  describe('add', () => {
-    it('should add a new idea object to the list', () => {
+  describe('add idea', () => {
+    
+    it('should add a new idea object to an empty todos array', () => {
       
       const stateBefore = []
       const stateAfter = [
@@ -21,15 +22,17 @@ describe('ideas', () => {
         }
       ]
       
+      deepFreeze(stateBefore)
+      
       expect(ideas(stateBefore, {
         type: 'add_idea',
         title: 'An app that ends world hunger',
         id: 0,
         stars: 0
       })).to.deep.equal(stateAfter)
-      
     })
-    it('should add a new idea object to the beginning of the list', () => {
+    
+    it('should add a new idea object to the beginning of an existing todos array', () => {
       
       const stateBefore = [
         {
@@ -51,13 +54,15 @@ describe('ideas', () => {
         }
       ]
       
+      deepFreeze(stateBefore)
+      
       expect(ideas(stateBefore, {
         type: 'add_idea',
         title: 'An app that talks to animals',
         id: 1
       })).to.deep.equal(stateAfter)
-      
     })
+  
   })
   
 })

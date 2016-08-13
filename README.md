@@ -1,25 +1,19 @@
-## App Orchard
+# App Orchard
 
+An app where users suggest app ideas.
 
-## Building
+## Building from source
 
 ### Install
-- clone this repo
-- `cd` into it
-- `npm install` to install dependencies
+- `git clone https://github.com/timurtu/app-orchard`
+- `cd app-orchard`
+- `npm install`
 
-### Testing
-- `npm test` to run jest unit tests
-- `npm run cover` to generate code coverage
-- mocha testing runs along with the app
+### Running and Testing
+- `npm start`
 
 ### Production
-
-- `echo $NODE_ENV` to see the environment you are using (__dev__ or __prod__)
-- `NODE_ENV="prod"` to switch to production
-- `npm start` to start the app
+- go to __http://localhost:3000__
 
 ### Hot loading
-
-- `NODE_ENV="dev"` to switch to development
-- `gulp watch` to start the app
+- go to __http://localhost:8080__

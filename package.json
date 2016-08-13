@@ -3,16 +3,12 @@
   "version": "1.0.0",
   "description": "Make your dream app a reality.",
   "scripts": {
-    "start": "npm-run-all --parallel watch server",
+    "start": "npm-run-all --parallel watch server client",
+    "client": "webpack-dev-server --inline --hot --content-base dist/",
     "build": "gulp build",
     "watch": "gulp watch",
     "clean": "rimraf dist",
-    "server": "nodemon dist/index.js",
-    "client": "webpack-dev-server --inline --hot --content-base dist/",
-    "test": "npm-run-all --sequential clean cover jest --parallel watch-tests",
-    "jest": "jest",
-    "watch-tests": "jest --watch=all",
-    "cover": "jest --coverage"
+    "server": "nodemon dist/index.js"
   },
   "devDependencies": {
     "babel-core": "^6.11.4",
