@@ -6,6 +6,7 @@ import React from 'react'
 import FontAwesome from 'react-fontawesome'
 import store from '../store'
 
+
 const IdeaList = ({ ideas }) =>
   <ul>
     {ideas.map(idea =>
@@ -17,12 +18,12 @@ const IdeaList = ({ ideas }) =>
             
             if (idea.isStarred) {
               store.dispatch({
-                type: 'unstar',
+                type: 'server/unstar',
                 id: idea.id
               })
             } else {
               store.dispatch({
-                type: 'star',
+                type: 'server/star',
                 id: idea.id
               })
             }

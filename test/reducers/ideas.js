@@ -25,7 +25,7 @@ describe('ideas reducer', () => {
       deepFreeze(stateBefore)
       
       expect(ideas(stateBefore, {
-        type: 'add_idea',
+        type: 'server/add_idea',
         title: 'An app that ends world hunger',
         id: 0
       })).to.deep.equal(stateAfter)
@@ -56,7 +56,7 @@ describe('ideas reducer', () => {
       deepFreeze(stateBefore)
       
       expect(ideas(stateBefore, {
-        type: 'add_idea',
+        type: 'server/add_idea',
         title: 'An app that talks to animals',
         id: 1
       })).to.deep.equal(stateAfter)
@@ -86,7 +86,7 @@ describe('ideas reducer', () => {
       deepFreeze(stateBefore)
       
       expect(ideas(stateBefore, {
-        type: 'star',
+        type: 'server/star',
         id: 0
       })).to.deep.equal(stateAfter)
       
@@ -117,7 +117,7 @@ describe('ideas reducer', () => {
       deepFreeze(stateBefore)
       
       expect(ideas(stateBefore, {
-        type: 'unstar',
+        type: 'server/unstar',
         id: 0
       })).to.deep.equal(stateAfter)
       
