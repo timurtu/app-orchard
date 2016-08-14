@@ -2,41 +2,18 @@
  * Created by timur on 8/7/16.
  */
 
-const path = require('path')
-const express = require('express')
-const log = require('gutil-color-log')
-// const crypto = require('crypto')
-// const hash = crypto.createHash('sha256')
-
+import path from 'path'
+import log from 'gutil-color-log'
+import express from 'express'
+import db from 'pouchdb'
 
 const app = express()
+const server = require('http').Server(app)
+const io = require('socket.io')(server)
+
+
+server.listen(3000)
 
 app.use(express.static(path.resolve('dist')))
-
-// app.get('blocks', (req, res) => {
-//   res.send({ id: data.toString('hex'), name: 'Jen' })
-//   res.end()
-// })
-
-// hash.on('readable', () => {
-//
-//   const data = hash.read()
-//
-//   if (data) {
-//
-//     app.get('/', (req, res) => {
-//       res.sendFile(path.resolve('dist/index.html'))
-//       res.end()
-//     })
-//
-//     app.listen(3000)
-//   }
-//
-// })
-
-// hash.write('some data to hash')
-// hash.end()
-
-app.listen(3000)
 
 log('cyan', 'express app running at http://localhost:3000')

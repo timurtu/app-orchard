@@ -1,6 +1,6 @@
 # App Orchard
 
-An app where users suggest app ideas.
+An app where any user can suggest their app idea.
 
 ## Building from source
 
