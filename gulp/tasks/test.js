@@ -5,7 +5,6 @@
 const gulp = require('gulp')
 const mocha = require('gulp-mocha')
 const path = require('path')
-const build = require('./build')
 const paths = require('../paths')
 const testTask = require('../utils').testTask
 const promisifyStream = require('../utils').promisifyStream

@@ -2,18 +2,11 @@
  * Created by timur on 7/26/16.
  */
 
-const DEV_MODE = true
-
 module.exports = {
   
   entry: {
-    app: (DEV_MODE) ? [
-      'webpack-dev-server/client?http://0.0.0.0:8080',
-      'webpack/hot/only-dev-server',
-      './src/app/entry.js'
-    ] : './src/app/entry.js',
-    
-    test: ['./test/entry']
+    app: './src/app/entry.js',
+    test: './test/entry'
   },
   
   output: {
@@ -23,15 +16,7 @@ module.exports = {
   
   module: {
     loaders: [
-      (DEV_MODE) ? {
-        test: /\.js$/,
-        exclude: /node_modules/,
-        loaders: ['react-hot', 'jsx?harmony', 'babel?cacheDirectory']
-      } : {
-        test: /\.js$/,
-        exclude: /node_modules/,
-        loaders: ['babel?cacheDirectory']
-      },
+      { test: /\.js$/, exclude: /node_modules/, loaders: ['babel?cacheDirectory'] },
       { test: /\.scss$/, include: /node_modules|src/, loader: 'style!css!sass' },
       { test: /\.(png|woff|woff2|eot|ttf|svg)$/, loader: 'url-loader?limit=100000' }
     ]

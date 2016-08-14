@@ -5,8 +5,8 @@
 import React from 'react'
 import store from '../store'
 import FontAwesome from 'react-fontawesome'
-
 import shortId from 'shortid'
+
 
 class IdeaForm extends React.Component {
   
@@ -38,7 +38,7 @@ class IdeaForm extends React.Component {
     if (hasStrictIdeaTitle && isGreaterThanMinLength) {
       
       store.dispatch({
-        type: 'add_idea',
+        type: 'server/add_idea',
         title,
         id: shortId.generate()
       })

@@ -6,6 +6,8 @@ import React from 'react'
 import store from '../store'
 
 
+const destroyAlert = (id) => store.dispatch({ type: 'remove_alert', id })
+
 const Alerts = ({ alerts }) =>
   <ul>
     {alerts.map(alert =>
@@ -13,12 +15,7 @@ const Alerts = ({ alerts }) =>
         <div
           className={`alert alert-${alert.alertType} alert-dismissible fade in`}>
           <button
-            onClick={() => {
-              store.dispatch({
-                type: 'remove_alert',
-                id: alert.id
-              })
-            }}
+            onClick={() => destroyAlert(alert.id)}
             style={{
               outline: '0'
             }}
