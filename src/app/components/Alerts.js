@@ -6,7 +6,7 @@ import React from 'react'
 import store from '../store'
 
 
-const destroyAlert = (id) => store.dispatch({ type: 'remove_alert', id })
+const destroyAlert = id => store.dispatch({ type: 'remove_alert', id })
 
 const Alerts = ({ alerts }) =>
   <ul>

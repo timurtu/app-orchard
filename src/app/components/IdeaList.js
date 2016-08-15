@@ -15,7 +15,6 @@ const IdeaList = ({ ideas }) =>
         <small
           className="icon-button"
           onClick={() => {
-            
             if (idea.isStarred) {
               store.dispatch({
                 type: 'server/unstar',

@@ -7,6 +7,6 @@ import ideas from './ideas'
 import alerts from './alerts'
 
 
-const rootReducer = combineReducers({ ideas, alerts })
+const reducer = combineReducers({ ideas, alerts })
 
-export default rootReducer
+export default reducer

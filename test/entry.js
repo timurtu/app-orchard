@@ -4,3 +4,4 @@
 
 import './reducers/ideas'
 import './reducers/alerts'
+import './reducers/helper'

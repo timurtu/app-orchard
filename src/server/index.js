@@ -5,27 +5,46 @@
 import path from 'path'
 import log from 'gutil-color-log'
 import express from 'express'
-// import db from 'pouchdb'
-
+import PouchDB from 'pouchdb'
 const app = express()
 const server = require('http').Server(app)
 const io = require('socket.io')(server)
+const db = new PouchDB('db')
 
+
+server.listen(3000)
+app.use(express.static(path.resolve('dist')))
+log('cyan', 'Server running at http://localhost:3000')
 
 io.on('connection', socket => {
+  
+  socket.emit('action', {
+    type: 'server/fill_ideas',
+    ideas: [{
+      title: 'An app that changes the world',
+      id: new Date().toISOString(),
+      stars: 3
+    }]
+  })
+  
   socket.on('action', action => {
     /* eslint-disable indent */
-    switch(action.type) {
+    switch (action.type) {
+      
       case 'server/add_idea':
-        return log('blue', JSON.stringify(action, null, 2))
-      default:
+        return storeIdea(action)
     }
     /* eslint-enable indent */
   })
 })
 
-server.listen(3000)
+const storeIdea = action =>
+  db.put({
+    _id: new Date().toISOString(),
+    title: action.title
+  })
+    .then(() => db.info())
+    .then(serverLog)
+    .catch(e => log('red', `Store failure ${e}`))
 
-app.use(express.static(path.resolve('dist')))
-
-log('cyan', 'express app running at http://localhost:3000')
+const serverLog = msg => log('cyan', JSON.stringify(msg, null, 2))

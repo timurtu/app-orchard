@@ -6,12 +6,11 @@ const gulp = require('gulp')
 const eslint = require('gulp-eslint')
 const path = require('path')
 const Promise = require('bluebird')
-
-const test = require('../utils').testTask
+const testTask = require('../utils').testTask
 const paths = require('../paths')
 
 
-gulp.task('lint', done => test(lint, 'Linted source.', done))
+gulp.task('lint', done => testTask(lint, 'Linted source.', done))
 
 const lint = () => {
   

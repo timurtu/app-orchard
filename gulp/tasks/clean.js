@@ -5,12 +5,11 @@
 const gulp = require('gulp')
 const Promise = require('bluebird')
 const rimrafAsync = Promise.promisify(require('rimraf'))
-
 const paths = require('../paths')
-const test = require('../utils').testTask
+const testTask = require('../utils').testTask
 
 
-gulp.task('clean', done => test(clean, 'Cleaned dist.', done))
+gulp.task('clean', done => testTask(clean, 'Cleaned dist.', done))
 
 const clean = () => rimrafAsync(paths.dist_root)
 

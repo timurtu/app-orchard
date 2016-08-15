@@ -2,17 +2,21 @@
  * Created by timur on 8/12/16.
  */
 
-const alerts = (state = [], { type, title, message, id, alertType }) => {
+import { removeById } from './helper'
+
+const alerts = (state = [], action) => {
   
   /* eslint-disable indent */
-  switch (type) {
-    
+  switch (action.type) {
     case 'add_alert':
-      return [{ id, title, message, alertType }, ...state]
-    
+      return [{
+        id: action.id,
+        title: action.title,
+        message: action.message,
+        alertType: action.alertType
+      }, ...state]
     case 'remove_alert':
-      return state.filter(alert => alert.id !== id)
-    
+      return removeById(action.id, state)
     default:
       return state
   }

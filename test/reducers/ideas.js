@@ -9,6 +9,38 @@ import ideas from '../../src/app/reducers/ideas'
 
 describe('ideas reducer', () => {
   
+  describe('fill ideas', () => {
+    
+    it('should fill the state with existing ideas', () => {
+      
+      const stateBefore = []
+      const stateAfter = [
+        {
+          title: 'An app that ends world hunger',
+          id: 0,
+          stars: 4
+        },
+        {
+          title: 'An app that talks to animals',
+          id: 1,
+          stars: 16
+        },
+        {
+          title: 'An app that does something amazing',
+          id: 2,
+          stars: 32
+        }
+      ]
+      
+      deepFreeze(stateBefore)
+      
+      expect(ideas(stateBefore, {
+        type: 'server/fill_ideas',
+        ideas: stateAfter
+      })).to.deep.equal(stateAfter)
+    })
+  })
+  
   describe('add idea', () => {
     
     it('should add a new idea to an empty ideas array', () => {

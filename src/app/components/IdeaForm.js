@@ -3,9 +3,9 @@
  */
 
 import React from 'react'
-import store from '../store'
 import FontAwesome from 'react-fontawesome'
 import shortId from 'shortid'
+import store from '../store'
 
 
 class IdeaForm extends React.Component {

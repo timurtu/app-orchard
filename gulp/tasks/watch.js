@@ -5,7 +5,6 @@
 const gulp = require('gulp')
 const path = require('path')
 const log = require('gutil-color-log')
-
 const paths = require('../paths')
 const build = require('./build')
 const test = require('./test')
