@@ -24,6 +24,12 @@ io.on('connection', socket => {
     /* eslint-disable indent */
     switch (action.type) {
       
+      case 'server/star':
+        return starIdea(action)
+      
+      case 'server/unstar':
+        return unstarIdea(action)
+        
       case 'server/add_idea':
         return storeNewIdea(action)
     }
@@ -59,6 +65,16 @@ const storeNewIdea = action =>
     .then(() => db.info())
     .then(prettyPrint)
     .catch(e => log('red', `Store idea failure ${e}`))
+
+const starIdea = (action, unstar) =>
+  db.get(action.id)
+    .then(doc => {
+      const stars = unstar ? doc.stars - 1 : doc.stars + 1
+      return db.put(Object.assign(doc, { stars }))
+    })
+    .catch(e => log('red', e))
+
+const unstarIdea = action => starIdea(action, true)
 
 const prettyPrint = msg => log('cyan', JSON.stringify(msg, null, 2))
   

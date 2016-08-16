@@ -10,6 +10,7 @@ import alerts from '../../src/app/reducers/alerts'
 describe('alerts reducer', () => {
   
   describe('add alert', () => {
+    
     it('should add a new alert to an empty alert array', () => {
       
       const stateBefore = []
@@ -32,6 +33,7 @@ describe('alerts reducer', () => {
         alertType: 'warning'
       })).to.deep.equal(stateAfter)
     })
+    
     it('should add a new alert to the beginning of an existing alert array', () => {
       
       const stateBefore = [
@@ -42,6 +44,7 @@ describe('alerts reducer', () => {
           alertType: 'warning'
         }
       ]
+      
       const stateAfter = [
         {
           title: 'Success!',
@@ -70,6 +73,7 @@ describe('alerts reducer', () => {
   })
   
   describe('remove alert', () => {
+    
     it('should remove an alert from an alert array', () => {
       
       const stateBefore = [
@@ -89,6 +93,7 @@ describe('alerts reducer', () => {
         id: 0
       })).to.deep.equal(stateAfter)
     })
+    
     it('should remove an alert from an alert array with 2 items', () => {
       
       const stateBefore = [
@@ -105,6 +110,7 @@ describe('alerts reducer', () => {
           alertType: 'warning'
         }
       ]
+      
       const stateAfter = [
         {
           title: 'Warning!',
