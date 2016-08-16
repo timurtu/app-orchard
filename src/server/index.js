@@ -13,8 +13,15 @@ const db = new PouchDB('db')
 
 
 server.listen(3000)
+
 app.use(express.static(path.resolve('dist')))
+
 log('cyan', 'Server running at http://localhost:3000')
+
+const prettyPrint = msg => log('cyan', JSON.stringify(msg, null, 2))
+
+db.info()
+  .then(prettyPrint)
 
 io.on('connection', socket => {
   
@@ -24,14 +31,17 @@ io.on('connection', socket => {
     /* eslint-disable indent */
     switch (action.type) {
       
+      case 'server/add_idea':
+        return storeNewIdea(action)
+      
+      case 'server/remove_idea':
+        return removeIdea(action)
+      
       case 'server/star':
         return starIdea(action)
       
       case 'server/unstar':
         return unstarIdea(action)
-        
-      case 'server/add_idea':
-        return storeNewIdea(action)
     }
     /* eslint-enable indent */
   })
@@ -62,9 +72,12 @@ const storeNewIdea = action =>
     title: action.title,
     stars: 0
   })
-    .then(() => db.info())
-    .then(prettyPrint)
-    .catch(e => log('red', `Store idea failure ${e}`))
+    .catch(e => log('red', `Error storing idea ${e}`))
+
+const removeIdea = action =>
+  db.get(action.id)
+    .then(doc => db.remove(doc))
+    .catch(e => log('red', `Error removing idea ${e}`))
 
 const starIdea = (action, unstar) =>
   db.get(action.id)
@@ -75,5 +88,3 @@ const starIdea = (action, unstar) =>
     .catch(e => log('red', `unstar:${unstar} error ${e}`))
 
 const unstarIdea = action => starIdea(action, true)
-
-const prettyPrint = msg => log('cyan', JSON.stringify(msg, null, 2))
