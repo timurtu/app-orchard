@@ -3,17 +3,14 @@
  */
 
 module.exports = {
-  
   entry: {
     app: './src/app/entry.js',
     test: './test/entry'
   },
-  
   output: {
     path: './dist',
     filename: '[name].js'
   },
-  
   module: {
     loaders: [
       { test: /\.js$/, exclude: /node_modules/, loaders: ['babel?cacheDirectory'] },

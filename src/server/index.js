@@ -25,16 +25,16 @@ io.on('connection', socket => {
     switch (action.type) {
       
       case 'server/add_idea':
-        return storeIdea(action)
+        return storeNewIdea(action)
     }
     /* eslint-enable indent */
   })
 })
 
-const fillIdeas = socket => {
-  
+const fillIdeas = socket =>
   db.allDocs({ include_docs: true, descending: true })
     .then(result => {
+      
       const ideas = result.rows.map(row => {
         return {
           id: row.doc._id,
@@ -48,16 +48,17 @@ const fillIdeas = socket => {
         ideas
       })
     })
-    .catch(err => log('red', err))
-}
+    .catch(err => log('red', `Fill ideas failure ${err}`))
 
-const storeIdea = action =>
+const storeNewIdea = action =>
   db.put({
     _id: new Date().toISOString(),
-    title: action.title
+    title: action.title,
+    stars: 0
   })
     .then(() => db.info())
-    .then(serverLog)
-    .catch(e => log('red', `Store failure ${e}`))
+    .then(prettyPrint)
+    .catch(e => log('red', `Store idea failure ${e}`))
 
-const serverLog = msg => log('cyan', JSON.stringify(msg, null, 2))
+const prettyPrint = msg => log('cyan', JSON.stringify(msg, null, 2))
+  
