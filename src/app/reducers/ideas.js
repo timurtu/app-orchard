@@ -18,23 +18,21 @@ const ideas = (state = [], action) => {
       }, ...state]
     
     case 'server/star':
-      return state.map(idea => {
-        const stars = idea.stars + 1
-        return (idea.id === action.id) ?
-          Object.assign({}, idea, { isStarred: true, stars }) : idea
-      })
+      return star(state, action, false)
     
     case 'server/unstar':
-      return state.map(idea => {
-        const stars = idea.stars - 1
-        return (idea.id === action.id) ?
-          Object.assign({}, idea, { isStarred: false, stars }) : idea
-      })
+      return star(state, action, true)
     
     default:
       return state
   }
   /* eslint-enable indent */
 }
+
+const star = (state, action, unstar) => state.map(idea => {
+  const stars = unstar ? idea.stars - 1 : idea.stars + 1
+  return (idea.id === action.id) ?
+    Object.assign({}, idea, { isStarred: !unstar, stars }) : idea
+})
 
 export default ideas

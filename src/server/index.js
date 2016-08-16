@@ -70,11 +70,10 @@ const starIdea = (action, unstar) =>
   db.get(action.id)
     .then(doc => {
       const stars = unstar ? doc.stars - 1 : doc.stars + 1
-      return db.put(Object.assign(doc, { stars }))
+      return db.put(Object.assign({}, doc, { stars }))
     })
-    .catch(e => log('red', e))
+    .catch(e => log('red', `unstar:${unstar} error ${e}`))
 
 const unstarIdea = action => starIdea(action, true)
 
 const prettyPrint = msg => log('cyan', JSON.stringify(msg, null, 2))
-  
