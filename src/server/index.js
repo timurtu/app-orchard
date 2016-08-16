@@ -18,14 +18,7 @@ log('cyan', 'Server running at http://localhost:3000')
 
 io.on('connection', socket => {
   
-  socket.emit('action', {
-    type: 'server/fill_ideas',
-    ideas: [{
-      title: 'An app that changes the world',
-      id: new Date().toISOString(),
-      stars: 3
-    }]
-  })
+  fillIdeas(socket)
   
   socket.on('action', action => {
     /* eslint-disable indent */
@@ -37,6 +30,26 @@ io.on('connection', socket => {
     /* eslint-enable indent */
   })
 })
+
+const fillIdeas = socket => {
+  
+  db.allDocs({ include_docs: true, descending: true })
+    .then(result => {
+      const ideas = result.rows.map(row => {
+        return {
+          id: row.doc._id,
+          title: row.doc.title,
+          stars: row.doc.stars
+        }
+      })
+      
+      socket.emit('action', {
+        type: 'server/fill_ideas',
+        ideas
+      })
+    })
+    .catch(err => log('red', err))
+}
 
 const storeIdea = action =>
   db.put({
