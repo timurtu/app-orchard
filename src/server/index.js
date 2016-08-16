@@ -9,9 +9,11 @@ import PouchDB from 'pouchdb'
 const app = express()
 const server = require('http').Server(app)
 const io = require('socket.io')(server)
-const db = new PouchDB('db')
+const db = new PouchDB('ideas')
 
 
+const remoteCouch = 'http://localhost:5984/ideas'
+db.sync(remoteCouch, { live: true })
 server.listen(3000)
 
 app.use(express.static(path.resolve('dist')))
