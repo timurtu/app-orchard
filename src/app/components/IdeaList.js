@@ -14,25 +14,24 @@ const IdeaList = ({ ideas }) =>
         <h1>{idea.title}</h1>
         <small
           className="icon-button"
-          onClick={() => {
-            if (idea.isStarred) {
-              store.dispatch({
-                type: 'server/unstar',
-                id: idea.id
-              })
-            } else {
-              store.dispatch({
-                type: 'server/star',
-                id: idea.id
-              })
-            }
-          }}
+          onClick={() => store.dispatch({
+            type: idea.isStarred ? 'server/unstar' : 'server/star',
+            id: idea.id
+          })}
           style={{
             color: idea.isStarred ?
               '#3cab7f' :
               'rgba(0, 0, 0, 0.5)'
           }}>
           {idea.stars} <FontAwesome name="star"/>
+        </small>
+        <small
+          className="icon-button pull-right"
+          onClick={() => store.dispatch({
+            type: 'server/remove_idea',
+            id: idea.id
+          })}>
+          <FontAwesome name="trash"/>
         </small>
       </li>
     )}

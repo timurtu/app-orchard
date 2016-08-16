@@ -93,11 +93,114 @@ describe('ideas reducer', () => {
         id: 1
       })).to.deep.equal(stateAfter)
     })
- 
+    
+  })
+  
+  describe('remove idea', () => {
+    
+    it('should remove an idea from the ideas array by id', () => {
+      
+      const stateBefore = [
+        {
+          title: 'An app that ends world hunger',
+          id: 0,
+          stars: 0
+        }
+      ]
+      const stateAfter = []
+      
+      deepFreeze(stateBefore)
+      
+      expect(ideas(stateBefore, {
+        type: 'server/remove_idea',
+        id: 0
+      })).to.deep.equal(stateAfter)
+    })
+    
+    it('should remove an idea from the beginning of the ideas array by id', () => {
+      
+      const stateBefore = [
+        {
+          title: 'An app that ends world hunger',
+          id: 1,
+          stars: 0
+        },
+        {
+          title: 'An app that talks to animals',
+          id: 2,
+          stars: 0
+        },
+        {
+          title: 'An app that changes the world',
+          id: 3,
+          stars: 0
+        }
+      ]
+      
+      const stateAfter = [
+        {
+          title: 'An app that talks to animals',
+          id: 2,
+          stars: 0
+        },
+        {
+          title: 'An app that changes the world',
+          id: 3,
+          stars: 0
+        }
+      ]
+      
+      deepFreeze(stateBefore)
+      
+      expect(ideas(stateBefore, {
+        type: 'server/remove_idea',
+        id: 1
+      })).to.deep.equal(stateAfter)
+    })
+    
+    it('should remove an idea from the end of the ideas array by id', () => {
+      const stateBefore = [
+        {
+          title: 'An app that ends world hunger',
+          id: 1,
+          stars: 0
+        },
+        {
+          title: 'An app that talks to animals',
+          id: 2,
+          stars: 0
+        },
+        {
+          title: 'An app that changes the world',
+          id: 3,
+          stars: 0
+        }
+      ]
+  
+      const stateAfter = [
+        {
+          title: 'An app that ends world hunger',
+          id: 1,
+          stars: 0
+        },
+        {
+          title: 'An app that talks to animals',
+          id: 2,
+          stars: 0
+        }
+      ]
+  
+      deepFreeze(stateBefore)
+  
+      expect(ideas(stateBefore, {
+        type: 'server/remove_idea',
+        id: 3
+      })).to.deep.equal(stateAfter)
+    })
   })
   
   describe('star idea', () => {
-  
+    
     it('should make an idea set to starred for a user', () => {
       const stateBefore = [
         {

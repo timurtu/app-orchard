@@ -39,8 +39,7 @@ class IdeaForm extends React.Component {
       
       store.dispatch({
         type: 'server/add_idea',
-        title,
-        id: shortId.generate()
+        title
       })
       
       return true

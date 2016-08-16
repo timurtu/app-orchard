@@ -2,6 +2,8 @@
  * Created by timur on 8/3/16.
  */
 
+import { removeById } from './helper'
+
 const ideas = (state = [], action) => {
   
   /* eslint-disable indent */
@@ -17,6 +19,9 @@ const ideas = (state = [], action) => {
         stars: 0
       }, ...state]
     
+    case 'server/remove_idea':
+      return removeById(action.id, state)
+
     case 'server/star':
       return star(state, action, false)
     
